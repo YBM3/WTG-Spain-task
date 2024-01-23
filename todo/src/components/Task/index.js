@@ -28,15 +28,33 @@ const Task = ({ task, deleteTask, toggleTask, editTask }) => {
           </button>
         </div>
       ) : (
-        <div className="form-check">
-          <input
-            type="checkbox"
-            checked={task.done}
-            onChange={() => toggleTask(task.id)}
-            className="form-check-input"
-          />
-          <label className="form-check-label">
-            {task.title} - {dateString}
+        <div className="form-check d-flex justify-content-between align-items-center">
+          <div>
+            <input
+              type="checkbox"
+              checked={task.done}
+              onChange={() => toggleTask(task.id)}
+              className="form-check-input"
+            />
+            <span>
+              {task.title} - {dateString}
+            </span>
+          </div>
+          <label className="form-check-label d-flex justify-content-between">
+            <div className="btn-group" role="group" aria-label="Basic example">
+              <button
+                onClick={() => setIsEditing(true)}
+                className="btn btn-primary mr-2"
+              >
+                Edit
+              </button>
+              <button
+                onClick={() => deleteTask(task.id)}
+                className="btn btn-danger"
+              >
+                Delete
+              </button>
+            </div>
           </label>
         </div>
       )}

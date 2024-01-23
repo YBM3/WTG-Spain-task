@@ -11,7 +11,17 @@ const Calendar = ({ tasks }) => {
     start: task.date,
     end: task.date,
     allDay: true,
+    done: task.done,
   }));
+
+  const eventStyleGetter = (event) => {
+    const style = {
+      backgroundColor: event.done ? "green" : "lightgrey",
+    };
+    return {
+      style: style,
+    };
+  };
 
   return (
     <div style={{ height: 500 }} className="mt-3">
@@ -20,6 +30,7 @@ const Calendar = ({ tasks }) => {
         events={events}
         startAccessor="start"
         endAccessor="end"
+        eventPropGetter={eventStyleGetter}
       />
     </div>
   );
