@@ -51,3 +51,5 @@ npm install
 ```bash
 node server.js
 ```
+
+Теперь API должено быть доступен по адресу http://localhost:5000/tasks.
