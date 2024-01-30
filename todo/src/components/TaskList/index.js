@@ -2,7 +2,7 @@ import React from "react";
 import Task from "../Task";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const TaskList = ({ tasks, deleteTask, toggleTask, editTask }) => (
+const TaskList = ({ currentUser, tasks, deleteTask, toggleTask, editTask }) => (
   <div className="list-group">
     {tasks.map((task) => (
       <Task

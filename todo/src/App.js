@@ -131,7 +131,12 @@ const App = () => {
                   toggleTask={toggleTask}
                   editTask={editTask}
                 />
-                <Calendar tasks={tasks} />
+                <Calendar
+                  tasks={tasks}
+                  editTask={editTask}
+                  deleteTask={deleteTask}
+                  toggleTask={toggleTask}
+                />
               </>
             }
           />
